@@ -29,7 +29,13 @@ public class Node {
         first = new Node();
         first.item = "not";
         first.next = oldFirst;
-        System.out.println("================================");
+        System.out.println("======insert at the beginning=======");
+        System.out.println(first.item);
+        System.out.println(first.next.item);
+
+        //delete at the beginning
+        first = first.next;
+        System.out.println("=====delete at the beginning=======");
         System.out.println(first.item);
         System.out.println(first.next.item);
     }
