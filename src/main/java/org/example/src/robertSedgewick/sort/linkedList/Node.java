@@ -17,9 +17,9 @@ public class Node {
         Node second = new Node();
         second.item = "be";
         first.next = second;
-        Node third = new Node();
-        third.item = "or";
-        second.next = third;
+        Node last = new Node();
+        last.item = "or";
+        second.next = last;
 
         System.out.println(first.item);
         System.out.println(first.next.item);
@@ -38,5 +38,17 @@ public class Node {
         System.out.println("=====delete at the beginning=======");
         System.out.println(first.item);
         System.out.println(first.next.item);
+
+        //append from the end
+        Node oldLast = last;
+        Node newLast = new Node();
+        newLast.item = "not";
+        oldLast.next = newLast;
+        System.out.println("=====append from the end=======");
+        System.out.println(newLast.item);
+        System.out.println(newLast.next);
+
+
+
     }
 }
