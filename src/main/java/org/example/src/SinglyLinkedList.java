@@ -1,7 +1,5 @@
 package org.example.src;
 
-import org.example.src.algorithms.spiski.Node;
-
 public class SinglyLinkedList<T>{
     private Node<T> head;
     private Node<T> tail;
