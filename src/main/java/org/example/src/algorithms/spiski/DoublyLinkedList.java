@@ -1,5 +1,7 @@
 package org.example.src.algorithms.spiski;
 
+import java.util.NoSuchElementException;
+
 public class DoublyLinkedList<T> {
     private DoublyLinkedNote<T> head;
     private DoublyLinkedNote<T> tail;
@@ -40,8 +42,36 @@ public class DoublyLinkedList<T> {
             tail = note;
         } else {
             tail.next = note;
-
+            note.previous = tail;
+            tail = note;
         }
+        count++;
+    }
+
+    public void removeFirst() {
+        if (isEmpty())
+            throw new NoSuchElementException("Ro'yxat bo'sh");
+
+        if (count == 1) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.previous = null;
+        }
+        count--;
+    }
+
+    public void removeLast() {
+        if (isEmpty())
+            throw new NoSuchElementException("Ro'yxat bo'sh");
+
+        if (count == 1) {
+            head = tail = null;
+        } else {
+            tail = tail.previous;
+            tail.next = null;
+        }
+        count--;
     }
 
     public boolean isEmpty() {
